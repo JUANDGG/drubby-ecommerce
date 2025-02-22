@@ -1,0 +1,24 @@
+
+
+server :
+  port : 8761
+
+spring :
+  application:
+    name : msvc-eureka
+  config:
+    # configuracion opcional por haora ya que se nesesita configurar el config server
+    import: optional:configserver:http://localhost:8888
+
+#eureka server develoment
+eureka:
+  instance:
+    hostname : localhost
+  client :
+    # por defecto eureka server se registra a si mismo esto le dice que no lo haga otra vez
+    registerWithEureka : false
+    fetch-registry: false
+    serviceUrl:
+      #donde va a estar este microservicio
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
