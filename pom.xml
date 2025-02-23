@@ -29,6 +29,13 @@
         <module>microservice-gateway</module>
         <module>microservice-eureka</module>
         <module>microservice-config</module>
+        <module>microservice-authManagement</module>
+        <module>microservice-productManagement</module>
+        <module>microservice-inventoryManagement</module>
+        <module>microservice-notificationManagement</module>
+        <module>microservice-orderManagement</module>
+        <module>microservice-paymentManagement</module>
+
     </modules>
 
     <properties>

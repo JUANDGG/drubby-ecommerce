@@ -1,0 +1,38 @@
+# spring.application.name=auth
+server :
+    address : localhost
+    port : 8001
+    servlet :
+        context-path : /auth
+
+
+spring :
+    application :
+        name : microservice-auth
+    config :
+      import: optional:configserver:http://localhost:8888
+    datasource:
+      # development
+        url: jdbc:postgresql://localhost:5432/drubby_db
+        username: postgres
+        password: juan
+        driver-class-name : org.postgresql.Driver
+    jpa :
+      hibernate:
+        ddl-auto : none
+      database : postgresql
+      database-platform : org.hibernate.dialect.PostgreSQLDialect
+
+
+    security:
+      user :
+        name : admin
+        password : admin
+
+# aca nos registramos en eureka como tal y le decimos donde esta el servidor de eureka
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url :
+      defaultZone : http://localhost:8761/eureka
